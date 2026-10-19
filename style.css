@@ -1,0 +1,260 @@
+  :root {
+    --nuit: #24608f;
+    --nuit-2: #1d5080;
+    --encre: #17324a;
+    --acier: #2f5d7c;
+    --acier-clair: #dfe9f0;
+    --jaune: #f2b705;
+    --jaune-clair: #ffd24a;
+    --texte: #1f272e;
+    --gris: #5d6872;
+    --trait: #cfd8de;
+    --titres: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Arial Narrow", system-ui, sans-serif;
+    --corps: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #fff; color: var(--texte); font-family: var(--corps); line-height: 1.6; }
+  a { color: var(--acier); }
+  a:focus-visible, .bouton:focus-visible { outline: 3px solid var(--jaune); outline-offset: 3px; }
+  .conteneur { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+  h1, h2, h3 { font-family: var(--titres); line-height: 1.15; }
+
+  header { background: var(--nuit); position: sticky; top: 0; z-index: 10; }
+  header .conteneur { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 2rem; padding-top: .9rem; padding-bottom: .9rem; }
+  .logo { font-family: var(--titres); font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
+  .logo { display: block; line-height: 0; }
+  .logo img { display: block; height: 3.4rem; width: auto; }
+  nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  nav a { color: #e3edf5; text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--jaune-clair); }
+
+  .hero { background: linear-gradient(160deg, #2a6ba3, var(--nuit) 55%, #1f5588); color: #fff; padding: 3.25rem 0 2.75rem; }
+  .hero-grille { display: grid; gap: 2.5rem; align-items: center; }
+  .hero-logo { display: none; }
+  @media (min-width: 900px) {
+    .hero-grille { grid-template-columns: 1.5fr 1fr; }
+    .hero-logo { display: block; width: 100%; max-width: 380px; height: auto; justify-self: center; }
+  }
+  .hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); font-weight: 700; margin: 0 0 1.1rem; max-width: 22ch; }
+  .hero p { font-size: 1.15rem; max-width: 58ch; margin: 0 0 2.25rem; color: #e0ebf4; }
+  .bouton { display: inline-block; padding: .9rem 1.6rem; border-radius: 4px; background: var(--jaune); color: var(--encre); font-weight: 700; text-decoration: none; }
+  .bouton:hover { background: #ffc92e; }
+  .bouton.secondaire { background: transparent; color: #fff; border: 2px solid #8fb2cf; }
+  .hero .bouton { margin: 0 .5rem .6rem 0; }
+  .bouton.secondaire:hover { border-color: var(--jaune-clair); color: var(--jaune-clair); }
+
+  /* Voie ferrée : fil de caténaire, deux rails, traverses */
+  .voie { height: 46px; background:
+      linear-gradient(var(--jaune), var(--jaune)) 0 4px / 100% 2px no-repeat,
+      linear-gradient(#9aa8b3, #9aa8b3) 0 19px / 100% 5px no-repeat,
+      linear-gradient(#9aa8b3, #9aa8b3) 0 34px / 100% 5px no-repeat,
+      repeating-linear-gradient(90deg, #4d4538 0 12px, transparent 12px 40px) 0 14px / 100% 30px no-repeat,
+      var(--nuit-2); }
+
+  section { padding: 4.5rem 0; }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 .75rem; color: var(--encre); }
+  .intro { max-width: 64ch; color: var(--gris); margin: 0 0 2.5rem; }
+
+  .groupe { display: grid; gap: 2.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 820px) { .groupe { grid-template-columns: 3fr 2fr; } }
+  .groupe p { margin: 0 0 1rem; max-width: 62ch; }
+  .faits { margin: 0; border-top: 1px solid var(--trait); }
+  .faits div { padding: .85rem 0; border-bottom: 1px solid var(--trait); }
+  .faits dt { font-weight: 700; color: var(--encre); }
+  .faits dd { margin: 0; color: var(--gris); }
+
+  #filiales { background: var(--acier-clair); }
+  .filiales { display: grid; gap: 2.25rem 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  @media (min-width: 820px) { .filiales { grid-template-columns: repeat(2, 1fr); } }
+  .filiale { padding-left: 1.5rem; border-left: 8px solid var(--acier); }
+  .filiale:nth-child(even) { border-left-color: var(--jaune); }
+  .filiale h3 { font-size: 1.5rem; margin: 0 0 .15rem; }
+  .role { margin: 0 0 .75rem; font-weight: 600; color: var(--acier); }
+  .filiale p { margin: 0 0 .75rem; }
+  .statut { margin: 0 0 .75rem; color: var(--gris); font-size: .95rem; }
+  .chiffres { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+  .chiffres li { background: #fff; border: 1px solid var(--trait); border-radius: 999px; padding: .15rem .75rem; font-size: .85rem; font-weight: 600; color: var(--encre); }
+  .coeur-titre { margin: 0 0 .35rem; font-weight: 700; color: var(--encre); font-size: .95rem; }
+  .coeur { margin: 0 0 1rem; padding-left: 1.1rem; }
+  .coeur li { margin-bottom: .3rem; }
+  .meta { font-size: .95rem; color: var(--gris); }
+  .meta a { font-weight: 600; }
+
+  .projets { list-style: none; margin: 0; padding: 0; }
+  .projets li { display: grid; gap: .25rem 2rem; padding: 1.25rem 0; border-top: 1px solid var(--trait); }
+  .projets li:last-child { border-bottom: 1px solid var(--trait); }
+  .projets h3 { margin: 0; font-size: 1.2rem; }
+  .projets p { margin: 0; color: var(--gris); }
+  @media (min-width: 760px) { .projets li { grid-template-columns: 1fr 2fr 9rem; align-items: baseline; } .projets .type { text-align: right; font-weight: 600; color: var(--acier); } }
+
+
+  /* Signalement */
+  [id] { scroll-margin-top: 5.5rem; }
+  #signalement { background: var(--acier-clair); }
+  .sous-titre { font-family: var(--titres); font-size: 1.45rem; color: var(--encre); margin: 0 0 .75rem; }
+  .bloc { margin-bottom: 3rem; }
+  .bloc p { max-width: 68ch; margin: 0 0 1rem; }
+  .avis { display: flex; gap: .75rem; align-items: flex-start; max-width: 70ch; background: #fff; border-left: 6px solid var(--jaune); padding: 1.1rem 1.25rem; }
+  .avis .ico { color: var(--acier); margin-top: .2rem; }
+  .avis p { margin: 0; }
+  .etapes { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem 2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .etapes li { padding-top: 1rem; border-top: 3px solid var(--acier); }
+  .numero { display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--nuit); color: #fff; font-weight: 700; margin-bottom: .6rem; }
+  .etapes h4 { margin: 0 0 .35rem; font-family: var(--titres); font-size: 1.2rem; color: var(--encre); }
+  .etapes p { margin: 0; }
+  .boite-mail { background: #fff; border: 1px solid var(--trait); border-radius: 8px; padding: 1.75rem; text-align: center; max-width: 720px; }
+  .boite-mail .etiquette { margin: 0 0 .25rem; font-weight: 700; color: var(--encre); }
+  .boite-mail a { font-size: 1.3rem; font-weight: 700; word-break: break-word; }
+  .boite-mail .note { margin: .75rem auto 0; color: var(--gris); max-width: 52ch; }
+  .important { max-width: 70ch; }
+  .important p { margin: 0 0 .75rem; }
+
+  .liste { margin: 0 0 1rem; padding-left: 1.2rem; max-width: 68ch; }
+  .liste li { margin-bottom: .4rem; }
+  .ref { margin-top: 1.5rem; }
+
+  /* Icônes */
+  .icone { width: 3.25rem; height: 3.25rem; border-radius: 12px; background: #fff; color: var(--acier); display: grid; place-items: center; margin-bottom: .9rem; }
+  .filiale:nth-child(even) .icone { background: #fdf0c4; color: #7a5800; }
+  .icone svg, .ico { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .icone svg { width: 1.75rem; height: 1.75rem; }
+  .ico { width: 1.3rem; height: 1.3rem; flex: none; }
+
+  #contact { background: var(--nuit); color: #fff; }
+  #contact h2 { color: #fff; }
+  #contact .intro { color: #e0ebf4; }
+  .coordonnees { display: grid; gap: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .coordonnees h3 { margin: 0 0 .25rem; font-size: 1rem; color: var(--jaune-clair); display: flex; align-items: center; gap: .5rem; }
+  .coordonnees p { margin: 0; }
+  #contact a { color: #fff; }
+
+  footer { background: #173f63; color: #b9cfe0; padding: 1.25rem 0; font-size: .9rem; }
+  footer p { margin: 0; }
+  .pied-liens { margin-top: .5rem; }
+  footer a { color: #fff; }
+  footer a:hover { color: var(--jaune-clair); }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* Menu mobile */
+  .menu-bouton { display: none; align-items: center; gap: .5rem; background: transparent; color: #fff; border: 2px solid #8fb2cf; border-radius: 4px; padding: .5rem .8rem; font: inherit; font-weight: 600; cursor: pointer; }
+  .menu-bouton:hover { border-color: var(--jaune-clair); color: var(--jaune-clair); }
+  .menu-bouton:focus-visible { outline: 3px solid var(--jaune); outline-offset: 3px; }
+  .menu-bouton svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  @media (max-width: 760px) {
+    .js .menu-bouton { display: inline-flex; }
+    .js header nav { display: none; flex-basis: 100%; flex-direction: column; gap: 0; border-top: 1px solid #4a7ea8; margin-top: .25rem; }
+    .js header nav.ouvert { display: flex; }
+    .js header nav a { padding: .8rem 0; border-bottom: 1px solid #3a6f9a; }
+  }
+
+  /* Page Signalement */
+  .page-signalement { padding-top: 3rem; min-height: 70vh; }
+  .page-signalement h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0 0 .75rem; color: var(--encre); }
+  .retour { margin: 0 0 1.5rem; }
+  .retour a { font-weight: 600; }
+
+  #donnees { background: var(--acier-clair); }
+
+/* ===== Scène ferroviaire, illustrations et animations ===== */
+.scene { position: relative; height: clamp(150px, 19vw, 250px); overflow: hidden; background: linear-gradient(180deg, #1f5588 0%, #3e78a8 45%, #bcd7ea 100%); }
+.scene-compact { height: clamp(96px, 10vw, 132px); }
+.scene > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.train-g { animation: passage 26s linear infinite; }
+@keyframes passage { 0% { transform: translateX(-660px); } 56% { transform: translateX(1500px); } 100% { transform: translateX(1500px); } }
+.nuage-1 { animation: derive 48s ease-in-out infinite alternate; }
+.nuage-2 { animation: derive 62s ease-in-out infinite alternate-reverse; }
+@keyframes derive { from { transform: translateX(-40px); } to { transform: translateX(140px); } }
+.soleil { animation: lueur 7s ease-in-out infinite alternate; }
+@keyframes lueur { from { opacity: .7; } to { opacity: 1; } }
+.phare { animation: lueur 2.4s ease-in-out infinite alternate; }
+.phare-halo { animation: lueur 2.4s ease-in-out infinite alternate-reverse; }
+
+.pause-anim { display: none; position: absolute; right: .75rem; top: .6rem; z-index: 2; background: rgba(23, 50, 74, .72); color: #fff; border: 1px solid rgba(255, 255, 255, .45); border-radius: 999px; padding: .3rem .8rem; font: inherit; font-size: .8rem; font-weight: 600; cursor: pointer; }
+.js .pause-anim { display: inline-block; }
+.pause-anim:hover { background: rgba(23, 50, 74, .92); }
+.pause-anim:focus-visible { outline: 3px solid var(--jaune); outline-offset: 2px; }
+.anim-pause *, .anim-pause *::before, .anim-pause *::after { animation-play-state: paused !important; }
+
+/* Entrée du bandeau d'accueil */
+@keyframes entree { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.hero h1 { animation: entree .8s ease both; }
+.hero p { animation: entree .8s ease .15s both; }
+.hero .bouton { animation: entree .8s ease .3s both; }
+.hero-logo { animation: entree 1s ease .2s both; }
+.bouton { transition: transform .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease; }
+.bouton:hover { transform: translateY(-2px); }
+
+/* Apparition au défilement (uniquement si JavaScript est actif) */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+.js .filiale:nth-child(2), .js .projets li:nth-child(2), .js .coordonnees > div:nth-child(2) { transition-delay: .1s; }
+.js .filiale:nth-child(3), .js .projets li:nth-child(3), .js .coordonnees > div:nth-child(3) { transition-delay: .2s; }
+.js .filiale:nth-child(4), .js .projets li:nth-child(4), .js .coordonnees > div:nth-child(4) { transition-delay: .3s; }
+.js .projets li:nth-child(5) { transition-delay: .4s; }
+
+/* Illustrations des filiales */
+.illus { border-radius: 12px; overflow: hidden; margin: 0 0 1rem; background: linear-gradient(180deg, #ffffff, #e6eff6); border: 1px solid var(--trait); aspect-ratio: 12 / 5; }
+.illus svg { display: block; width: 100%; height: 100%; }
+.trace { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 2.4s ease .3s; }
+.js .reveal:not(.visible) .trace { stroke-dashoffset: 1; }
+.axe, .station { transition: opacity .6s ease 2.4s; }
+.js .reveal:not(.visible) .axe, .js .reveal:not(.visible) .station { opacity: 0; }
+.machine { animation: va-et-vient 14s ease-in-out infinite alternate; }
+@keyframes va-et-vient { from { transform: translateX(0); } to { transform: translateX(120px); } }
+.crochet { transform-box: fill-box; transform-origin: top center; animation: balance 3s ease-in-out infinite alternate; }
+@keyframes balance { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+.bande { stroke-dasharray: 5 13; animation: defile 1.2s linear infinite; }
+@keyframes defile { to { stroke-dashoffset: -18; } }
+.grain { animation: chute 1.6s ease-in infinite; }
+.grain-2 { animation-delay: .5s; }
+.grain-3 { animation-delay: 1s; }
+@keyframes chute { from { transform: translateY(0); opacity: 1; } to { transform: translateY(28px); opacity: 0; } }
+.courant { stroke-dasharray: 6 24; animation: defile-courant 1.4s linear infinite; }
+@keyframes defile-courant { to { stroke-dashoffset: -30; } }
+.rame { animation: rame 12s linear infinite; }
+@keyframes rame { from { transform: translateX(-150px); } to { transform: translateX(380px); } }
+.eclair-halo { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-out infinite; }
+@keyframes pulse { from { transform: scale(.85); opacity: .8; } to { transform: scale(1.6); opacity: 0; } }
+
+/* Mouvement réduit : tout reste visible, rien ne bouge */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+  .js .reveal:not(.visible) .trace { stroke-dashoffset: 0; }
+  .js .reveal:not(.visible) .axe, .js .reveal:not(.visible) .station { opacity: 1; }
+  .train-g { transform: translateX(560px); }
+  .rame { transform: translateX(120px); }
+  .machine { transform: translateX(40px); }
+  .pause-anim { display: none !important; }
+}
+@media print { .js .reveal { opacity: 1; transform: none; } .pause-anim { display: none; } }
+
+/* ===== Carte d'accès (Leaflet hébergé localement) ===== */
+#acces { background: var(--acier-clair); }
+.carte { max-width: 960px; }
+.carte-actions { display: none; flex-wrap: wrap; gap: .75rem; margin: 0 0 1rem; }
+.js .carte-actions { display: flex; }
+.carte-actions .bouton { border: 2px solid transparent; font: inherit; font-weight: 700; line-height: 1.6; cursor: pointer; }
+.carte-actions .bouton[hidden] { display: none; }
+.carte-actions .bouton:disabled { opacity: .6; cursor: progress; }
+.bouton.contour { background: #fff; color: var(--encre); border-color: var(--acier); }
+.bouton.contour:hover { background: var(--encre); color: #fff; }
+.carte-zone { position: relative; height: clamp(300px, 56vw, 460px); border-radius: 12px; overflow: hidden; border: 1px solid var(--trait); background: #fff; display: grid; place-items: center; }
+.carte-zone.leaflet-container { display: block; font: inherit; }
+.carte-attente { margin: 0; padding: 1rem 1.5rem; max-width: 46ch; text-align: center; color: var(--gris); }
+.carte-statut { min-height: 1.6em; margin: .9rem 0 .25rem; font-weight: 600; color: var(--encre); max-width: 70ch; }
+.carte-legende { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; list-style: none; margin: .5rem 0 0; padding: 0; font-size: .9rem; color: var(--gris); }
+.carte-legende li::before { content: ""; display: inline-block; width: .9rem; height: .9rem; border-radius: 50%; margin-right: .45rem; vertical-align: -.12em; border: 2px solid #fff; box-shadow: 0 0 0 1px #8a99a6; }
+.l-siege::before { background: #f2b705; }
+.l-filiale::before { background: #24608f; }
+.l-moi::before { background: #c92a2a; }
+.carte-liens { margin: .9rem 0 .5rem; font-weight: 600; }
+.carte-note { margin: 0; font-size: .85rem; color: var(--gris); max-width: 72ch; }
+.pin span { display: block; box-sizing: border-box; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 1px 5px rgba(0, 0, 0, .55); }
+.pin-siege span { width: 28px; height: 28px; margin: 1px; background: #f2b705; }
+.pin-filiale span { width: 20px; height: 20px; margin: 5px; background: #24608f; }
+.pin-moi span { width: 20px; height: 20px; margin: 5px; background: #c92a2a; }
+.leaflet-marker-icon.pin:focus-visible span { outline: 3px solid var(--encre); outline-offset: 2px; }
+.leaflet-popup-content { font-family: var(--corps); }

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://tile.openstreetmap.org; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>GCF Spa – Groupe public de construction ferroviaire</title>
+<meta name="description" content="GCF Spa, Groupe public de construction ferroviaire : études, pose de voies, génie civil, matériaux et électrification, avec ses filiales SETIRAIL, INFRARAIL, INFRAFER et RAILELECTR.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
+<script src="carte.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="conteneur">
+    <a class="logo" href="#accueil" aria-label="GCF Spa, accueil"><img src="logo-gcf-blanc.png" width="1000" height="700" alt="GCF Spa – Groupe public de construction ferroviaire"></a>
+    <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</button>
+    <nav id="menu" aria-label="Navigation principale">
+      <a href="#groupe">Le Groupe</a>
+      <a href="#filiales">Filiales</a>
+      <a href="#projets">Projets</a>
+      <a href="#acces">Nous situer</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="accueil">
+  <div class="hero">
+    <div class="conteneur hero-grille">
+      <div>
+      <h1>Le groupe public qui étudie, construit et électrifie le rail algérien</h1>
+      <p>GCF Spa réunit quatre entreprises publiques du ferroviaire : études, pose de voies, génie civil, matériaux et électrification, de la conception à la maintenance.</p>
+      <a class="bouton" href="#filiales">Découvrir nos filiales</a>
+      <a class="bouton secondaire" href="#contact">Nous contacter</a>
+      </div>
+      <img class="hero-logo" src="logo-gcf-blanc.png" width="1000" height="700" alt="" aria-hidden="true">
+    </div>
+  </div>
+  <div class="scene">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMax slice" focusable="false" aria-hidden="true">
+    <defs>
+      <pattern id="traverses" width="40" height="8" patternUnits="userSpaceOnUse"><rect width="16" height="8" fill="#4d4538"/></pattern>
+      <radialGradient id="soleil" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd24a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd24a" stop-opacity="0"/></radialGradient>
+    </defs>
+    <circle class="soleil" cx="1180" cy="66" r="72" fill="url(#soleil)"/>
+    <circle cx="1180" cy="66" r="20" fill="#ffe089"/>
+    <g class="nuage nuage-1" fill="#fff" opacity=".32"><ellipse cx="260" cy="58" rx="64" ry="13"/><ellipse cx="304" cy="48" rx="40" ry="11"/></g>
+    <g class="nuage nuage-2" fill="#fff" opacity=".26"><ellipse cx="800" cy="40" rx="72" ry="12"/><ellipse cx="846" cy="32" rx="44" ry="10"/></g>
+    <path d="M0 140 C90 118 200 108 320 124 S560 96 700 112 S980 92 1120 118 S1340 104 1440 122 V220 H0 Z" fill="#86aecb" opacity=".65"/>
+    <path d="M0 168 C140 146 280 152 430 164 S720 146 880 160 S1230 146 1440 164 V220 H0 Z" fill="#4f86b3" opacity=".8"/>
+    <rect x="0" y="196" width="1440" height="24" fill="#24485f"/>
+    <rect x="0" y="208" width="1440" height="12" fill="#5a606a"/>
+    <rect x="0" y="200" width="1440" height="8" fill="url(#traverses)"/>
+    <rect x="0" y="196" width="1440" height="4" fill="#aab6c0"/>
+    <g stroke="#17324a" stroke-width="5" stroke-linecap="round" fill="none"><path d="M0 196 V80 M-16 80 H16"/><path d="M240 196 V80 M224 80 H256"/><path d="M480 196 V80 M464 80 H496"/><path d="M720 196 V80 M704 80 H736"/><path d="M960 196 V80 M944 80 H976"/><path d="M1200 196 V80 M1184 80 H1216"/><path d="M1440 196 V80 M1424 80 H1456"/></g>
+    <g stroke="#17324a" stroke-width="1.6" fill="none"><path d="M0 86 Q120 102 240 86"/><path d="M240 86 Q360 102 480 86"/><path d="M480 86 Q600 102 720 86"/><path d="M720 86 Q840 102 960 86"/><path d="M960 86 Q1080 102 1200 86"/><path d="M1200 86 Q1320 102 1440 86"/></g>
+    <g stroke="#17324a" stroke-width="1" fill="none"><path d="M60 92.0 V101"/><path d="M120 94.0 V101"/><path d="M180 92.0 V101"/><path d="M300 92.0 V101"/><path d="M360 94.0 V101"/><path d="M420 92.0 V101"/><path d="M540 92.0 V101"/><path d="M600 94.0 V101"/><path d="M660 92.0 V101"/><path d="M780 92.0 V101"/><path d="M840 94.0 V101"/><path d="M900 92.0 V101"/><path d="M1020 92.0 V101"/><path d="M1080 94.0 V101"/><path d="M1140 92.0 V101"/><path d="M1260 92.0 V101"/><path d="M1320 94.0 V101"/><path d="M1380 92.0 V101"/></g>
+    <path d="M0 101 H1440" stroke="#f2b705" stroke-width="2.2"/>
+    <g transform="translate(0 132)"><g class="train-g">
+      <path d="M0 8 Q0 0 8 0 H520 C566 0 596 22 604 50 V56 H0 Z" fill="#f1f5f8" stroke="#b9c8d4"/>
+      <path d="M0 34 H592 C598 40 602 45 604 50 V56 H0 Z" fill="#24608f"/>
+      <rect x="0" y="30" width="592" height="4" fill="#f2b705"/>
+      <g fill="#1d3c57"><rect x="24" y="8" width="36" height="16" rx="3"/><rect x="80" y="8" width="36" height="16" rx="3"/><rect x="136" y="8" width="36" height="16" rx="3"/><rect x="192" y="8" width="36" height="16" rx="3"/><rect x="248" y="8" width="36" height="16" rx="3"/><rect x="304" y="8" width="36" height="16" rx="3"/><rect x="360" y="8" width="36" height="16" rx="3"/><rect x="416" y="8" width="36" height="16" rx="3"/><rect x="472" y="8" width="36" height="16" rx="3"/><path d="M520 8 H544 C562 12 574 22 580 30 H520 Z"/></g>
+      <path d="M130 0 V56 M298 0 V56 M466 0 V56" stroke="#b9c8d4"/>
+      <g fill="#17324a"><rect x="30" y="56" width="70" height="6" rx="3"/><rect x="210" y="56" width="70" height="6" rx="3"/><rect x="390" y="56" width="70" height="6" rx="3"/><rect x="500" y="56" width="70" height="6" rx="3"/>
+        <circle cx="42" cy="59" r="5"/><circle cx="88" cy="59" r="5"/><circle cx="222" cy="59" r="5"/><circle cx="268" cy="59" r="5"/><circle cx="402" cy="59" r="5"/><circle cx="448" cy="59" r="5"/><circle cx="512" cy="59" r="5"/><circle cx="558" cy="59" r="5"/></g>
+      <rect x="258" y="-3" width="48" height="3" fill="#17324a"/>
+      <path d="M264 -3 L282 -28 L300 -3 M268 -30 H296" fill="none" stroke="#17324a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="phare-halo" cx="600" cy="44" r="8" fill="#ffe089" opacity=".35"/>
+      <circle class="phare" cx="600" cy="44" r="3.5" fill="#fff3c4"/>
+    </g></g>
+  </svg>
+  <button class="pause-anim" type="button" aria-pressed="false">Mettre en pause l’animation</button>
+</div>
+
+  <section id="groupe">
+    <div class="conteneur">
+      <h2 class="reveal">Le Groupe</h2>
+      <p class="intro reveal">Un pôle national de l'ingénierie et de la réalisation ferroviaires.</p>
+      <div class="groupe">
+        <div class="reveal">
+          <p>GCF Spa est né de la volonté de l'État de rassembler les compétences nationales d'ingénierie et de réalisation dans le domaine ferroviaire, afin de répondre aux grands projets de développement et de densification du réseau.</p>
+          <p>Le groupe vise à renforcer l'autonomie technologique du pays et la position des entreprises algériennes face à la concurrence étrangère. Il s'ouvre aussi à d'autres métiers liés au ferroviaire : bâtiment, énergie, travaux publics et matériaux de construction.</p>
+        </div>
+        <dl class="faits reveal">
+          <div><dt>Création</dt><dd>Décidée par le Conseil des Participations de l'État le 23 mai 2024, assemblée générale constitutive le 29 juillet 2024</dd></div>
+          <div><dt>Tutelle</dt><dd>Ministère des Travaux publics et des Infrastructures de base</dd></div>
+          <div><dt>Forme juridique</dt><dd>Société par actions (EPE/SPA)</dd></div>
+          <div><dt>Filiales</dt><dd>SETIRAIL, INFRARAIL, INFRAFER et RAILELECTR</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="filiales">
+    <div class="conteneur">
+      <h2 class="reveal">Nos quatre filiales</h2>
+      <p class="intro reveal">Des expertises complémentaires, mobilisées ensemble sur chaque projet ferroviaire.</p>
+      <div class="filiales">
+
+        <div class="filiale reveal">
+          <div class="illus"><svg viewBox="0 0 360 150" focusable="false" aria-hidden="true">
+      <defs><pattern id="grille" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#cfdde8" stroke-width="1"/></pattern></defs>
+      <rect width="360" height="150" fill="url(#grille)"/>
+      <path d="M0 118 C60 118 84 66 150 66 S252 104 300 60 S338 42 360 42" fill="none" stroke="#9db8cc" stroke-width="12" stroke-linecap="round" opacity=".35"/>
+      <path class="trace" pathLength="1" d="M0 118 C60 118 84 66 150 66 S252 104 300 60 S338 42 360 42" fill="none" stroke="#24608f" stroke-width="4" stroke-linecap="round"/>
+      <path class="axe" d="M0 118 C60 118 84 66 150 66 S252 104 300 60 S338 42 360 42" fill="none" stroke="#f2b705" stroke-width="1.6" stroke-dasharray="6 6"/>
+      <g class="station" fill="#fff" stroke="#24608f" stroke-width="3"><circle cx="150" cy="66" r="6"/><circle cx="300" cy="60" r="6"/></g>
+      <g><path d="M318 108 L306 146 M318 108 L330 146 M318 108 V146" stroke="#17324a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <rect x="309" y="94" width="18" height="14" rx="3" fill="#17324a"/><rect x="316" y="87" width="6" height="8" rx="1.5" fill="#24608f"/><circle cx="320" cy="99" r="3.2" fill="#f2b705"/></g></svg></div>
+          <h3>SETIRAIL</h3>
+          <p class="role">Études, contrôle, suivi et expertise</p>
+          <p class="statut">Société d’études techniques et de l’ingénierie du rail</p>
+          <ul class="chiffres"><li>Plus de 37 ans d’expérience</li></ul>
+          <p class="coeur-titre">Cœur de métier</p>
+          <ul class="coeur">
+            <li>Études d’infrastructures ferroviaires et routières</li>
+            <li>Études d’électrification et d’énergie</li>
+            <li>Études de transport</li>
+            <li>Études environnementales</li>
+            <li>Études de systèmes de gestion du trafic</li>
+            <li>Contrôle et suivi des travaux</li>
+            <li>Certification et expertises</li>
+          </ul>
+          <p class="meta">Rouiba, Alger<br><a href="https://www.setirail.dz" target="_blank" rel="noopener">Site web de SETIRAIL</a></p>
+        </div>
+        <div class="filiale reveal">
+          <div class="illus"><svg viewBox="0 0 360 150" focusable="false" aria-hidden="true">
+      <defs><pattern id="trav2" width="30" height="8" patternUnits="userSpaceOnUse"><rect width="18" height="8" fill="#4d4538"/></pattern></defs>
+      <rect y="104" width="360" height="46" fill="#b9c0c6"/>
+      <rect y="100" width="360" height="8" fill="url(#trav2)"/>
+      <rect y="96" width="360" height="4" fill="#8e9aa5"/>
+      <path d="M326 96 V30 M312 36 H340" stroke="#17324a" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M200 44 H360" stroke="#f2b705" stroke-width="2"/>
+      <g class="machine">
+        <rect x="8" y="52" width="104" height="30" rx="4" fill="#f2b705"/>
+        <rect x="14" y="30" width="38" height="26" rx="3" fill="#ffd24a"/>
+        <rect x="20" y="35" width="26" height="14" rx="2" fill="#1d3c57"/>
+        <path d="M84 52 L150 22" stroke="#f2b705" stroke-width="7" stroke-linecap="round"/>
+        <g class="crochet"><path d="M150 22 V62" stroke="#17324a" stroke-width="2"/><rect x="128" y="62" width="44" height="4" rx="1" fill="#8e9aa5"/></g>
+        <circle cx="28" cy="89" r="7" fill="#17324a"/><circle cx="92" cy="89" r="7" fill="#17324a"/>
+      </g></svg></div>
+          <h3>INFRARAIL</h3>
+          <p class="role">Infrastructures ferroviaires, BTPH et génie civil</p>
+          <p class="statut">Société des infrastructures ferroviaires (SPA)</p>
+          <ul class="chiffres"><li>Plus de 29 ans d’expérience</li><li>Certifiée ISO 9001, 14001 et 45001</li></ul>
+          <p class="coeur-titre">Cœur de métier</p>
+          <ul class="coeur">
+            <li>Travaux de voies ferrées, travaux urbains et d’hygiène publique</li>
+            <li>Études et réalisation en génie civil et BTPH</li>
+            <li>Bâtiment tout corps d’état, grands travaux publics et hydrauliques</li>
+            <li>Construction métallique, terrassements et travaux ruraux</li>
+            <li>Installation de réseaux et de centrales électriques et téléphoniques</li>
+            <li>Préfabrication d’éléments en béton et béton prêt à l’emploi</li>
+            <li>Exploitation de carrières de pierres de taille</li>
+          </ul>
+          <p class="meta">Rouiba, Alger<br><a href="https://www.infrarail.dz" target="_blank" rel="noopener">Site web d'INFRARAIL</a></p>
+        </div>
+        <div class="filiale reveal">
+          <div class="illus"><svg viewBox="0 0 360 150" focusable="false" aria-hidden="true">
+      <rect y="118" width="360" height="32" fill="#cdd5db"/><rect y="117" width="360" height="2" fill="#aab4bd"/>
+      <g fill="#aeb6bd"><rect x="14" y="104" width="118" height="14" rx="2"/><rect x="22" y="90" width="102" height="14" rx="2"/><rect x="30" y="76" width="86" height="14" rx="2"/></g>
+      <g fill="#8f98a0"><rect x="30" y="108" width="10" height="6"/><rect x="104" y="108" width="10" height="6"/><rect x="38" y="94" width="10" height="6"/><rect x="96" y="94" width="10" height="6"/><rect x="46" y="80" width="10" height="6"/><rect x="88" y="80" width="10" height="6"/></g>
+      <path d="M180 89 V118 M240 55 V118" stroke="#4d5560" stroke-width="3"/>
+      <path d="M132 116 L284 30" stroke="#4d5560" stroke-width="9" stroke-linecap="round"/>
+      <path class="bande" d="M132 116 L284 30" stroke="#f2b705" stroke-width="2" fill="none"/>
+      <polygon points="236,118 292,64 348,118" fill="#98a0a8"/>
+      <g fill="#6f7780"><circle cx="272" cy="102" r="3"/><circle cx="300" cy="92" r="3"/><circle cx="318" cy="108" r="3"/><circle cx="286" cy="110" r="3"/><circle cx="296" cy="78" r="2.5"/><circle cx="262" cy="112" r="2.5"/></g>
+      <g fill="#6f7780"><circle class="grain grain-1" cx="289" cy="36" r="3"/><circle class="grain grain-2" cx="293" cy="36" r="3"/><circle class="grain grain-3" cx="285" cy="36" r="2.5"/></g></svg></div>
+          <h3>INFRAFER</h3>
+          <p class="role">Études, fabrication, réalisation et maintenance</p>
+          <p class="statut">Entreprise publique économique de réalisation d’infrastructures ferroviaires</p>
+          <ul class="chiffres"><li>Plus de 40 ans d’expérience</li><li>Certifiée ISO 9001</li></ul>
+          <p class="coeur-titre">Cœur de métier</p>
+          <ul class="coeur">
+            <li>Travaux ferroviaires (réalisation et entretien)</li>
+            <li>Maintenance, entretien et renouvellement des voies ferrées</li>
+            <li>Maintenance et réparation du matériel roulant et fixe</li>
+            <li>Études ferroviaires et génie civil</li>
+            <li>Travaux publics et hydraulique</li>
+            <li>Production de traverses en béton armé</li>
+            <li>Production de ballast et d’agrégats</li>
+            <li>Éléments préfabriqués en béton (murettes garde-ballast, murs de quais, dalots)</li>
+          </ul>
+          <p class="meta">Rouiba, Alger<br><a href="https://infrafer.com" target="_blank" rel="noopener">Site web d'INFRAFER</a></p>
+        </div>
+        <div class="filiale reveal">
+          <div class="illus"><svg viewBox="0 0 360 150" focusable="false" aria-hidden="true">
+      <rect y="138" width="360" height="12" fill="#b9c0c6"/><rect y="134" width="360" height="4" fill="#8e9aa5"/>
+      <g stroke="#17324a" stroke-width="5" stroke-linecap="round" fill="none"><path d="M70 134 V34 M290 134 V34 M58 34 H302"/></g>
+      <g stroke="#17324a" stroke-width="1.6" fill="none"><path d="M0 40 H70 M290 40 H360 M70 38 Q180 62 290 38"/></g>
+      <g stroke="#17324a" stroke-width="1" fill="none"><path d="M110 45 V84 M150 49 V84 M180 50 V84 M210 49 V84 M250 45 V84"/></g>
+      <path d="M0 84 H360" stroke="#f2b705" stroke-width="2.6"/>
+      <path class="courant" d="M0 84 H360" stroke="#d98e00" stroke-width="2.6" fill="none"/>
+      <g class="rame">
+        <rect x="0" y="92" width="130" height="36" rx="6" fill="#24608f"/>
+        <g fill="#dfe9f0"><rect x="10" y="98" width="22" height="12" rx="2"/><rect x="38" y="98" width="22" height="12" rx="2"/><rect x="66" y="98" width="22" height="12" rx="2"/><rect x="94" y="98" width="26" height="12" rx="2"/></g>
+        <rect x="0" y="116" width="130" height="3" fill="#f2b705"/>
+        <path d="M54 92 L66 86 L78 92 M56 85 H76" stroke="#17324a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="22" cy="130" r="5" fill="#17324a"/><circle cx="108" cy="130" r="5" fill="#17324a"/>
+      </g>
+      <circle class="eclair-halo" cx="322" cy="22" r="14" fill="none" stroke="#f2b705" stroke-width="2"/>
+      <circle cx="322" cy="22" r="14" fill="#fdf0c4" stroke="#f2b705" stroke-width="1.5"/>
+      <path transform="translate(316 16) scale(.5)" d="M13 2L4 14h7l-1 8 9-12h-7z" fill="#f2b705" stroke="#7a5800" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+          <h3>RAILELECTR</h3>
+          <p class="role">Sécurité, ingénierie, électrification et maintenance</p>
+          <p class="statut">Entreprise publique économique</p>
+          <ul class="chiffres"><li>Plus de 32 ans d’expérience</li></ul>
+          <p class="coeur-titre">Cœur de métier</p>
+          <ul class="coeur">
+            <li>Électrification des lignes ferroviaires</li>
+            <li>Études et réalisation de systèmes d’énergie</li>
+            <li>Télésurveillance, centrales électriques et téléphoniques</li>
+            <li>Travaux et mise à niveau des installations électriques</li>
+            <li>Maintenance et expertise d’ouvrages d’art</li>
+            <li>Études et engineering</li>
+            <li>Grands travaux publics et hydrauliques</li>
+            <li>Ensembles de construction métallique</li>
+          </ul>
+          <p class="meta">Hussein Dey, Alger<br><a href="https://railelectr.dz" target="_blank" rel="noopener">Site web de RAILELECTR</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="conteneur">
+      <h2 class="reveal">Projets et partenariats</h2>
+      <p class="intro reveal">Les filiales du groupe contribuent aux grands chantiers ferroviaires du pays et ouvrent des coopérations en Afrique.</p>
+      <ul class="projets">
+        <li class="reveal">
+          <h3>Annaba – Bled El Hadba</h3>
+          <p>Ligne ferroviaire minière reliant Annaba à Bled El Hadba (Tébessa).</p>
+          <p class="type">Ligne minière</p>
+        </li>
+        <li class="reveal">
+          <h3>Béchar – Gara Djebilet</h3>
+          <p>Ligne ferroviaire minière Ouest, vers Gara Djebilet (Tindouf).</p>
+          <p class="type">Ligne minière</p>
+        </li>
+        <li class="reveal">
+          <h3>Touggourt – Hassi Messaoud</h3>
+          <p>Participation du groupe à la réalisation de cette ligne, avec une perspective de prolongement vers Tamanrasset.</p>
+          <p class="type">Ligne ferroviaire</p>
+        </li>
+        <li class="reveal">
+          <h3>Guinée</h3>
+          <p>Mémorandum d'entente signé en 2025 avec le groupe Baling pour la construction, l'électrification et la maintenance de lignes ferroviaires.</p>
+          <p class="type">International</p>
+        </li>
+        <li class="reveal">
+          <h3>Gabon</h3>
+          <p>Discussions engagées en vue d'un futur partenariat dans les infrastructures ferroviaires.</p>
+          <p class="type">International</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section id="acces">
+    <div class="conteneur">
+      <h2 class="reveal">Nous situer</h2>
+      <p class="intro reveal">Le siège du Groupe est à Birkhadem, à Alger. Affichez la carte puis, si vous le souhaitez, localisez-vous pour connaître la distance qui vous sépare du siège.</p>
+      <div id="carte" class="carte reveal" data-lat="36.7150" data-lon="3.0520" data-adresse="Lotissement Mont Froid, Zonka, Birkhadem, Alger">
+        <div class="carte-actions">
+          <button id="carte-afficher" class="bouton" type="button">Afficher la carte</button>
+          <button id="carte-localiser" class="bouton contour" type="button" hidden>Me localiser</button>
+        </div>
+        <div id="carte-zone" class="carte-zone" role="region" aria-label="Carte du siège de GCF Spa et de ses filiales">
+          <p class="carte-attente">La carte s’affiche à votre demande. Tant que vous ne cliquez pas sur « Afficher la carte », aucune donnée n’est envoyée à un service de cartographie.</p>
+        </div>
+        <p id="carte-statut" class="carte-statut" role="status" aria-live="polite"></p>
+        <ul class="carte-legende" aria-label="Légende de la carte">
+          <li class="l-siege">Siège de GCF Spa</li>
+          <li class="l-filiale">Filiales (position approximative)</li>
+          <li class="l-moi">Votre position</li>
+        </ul>
+        <p class="carte-liens">
+          <a id="lien-osm" href="https://www.openstreetmap.org/?mlat=36.7150&amp;mlon=3.0520#map=16/36.7150/3.0520" target="_blank" rel="noopener">Voir le siège sur OpenStreetMap</a>
+          · <a id="lien-google" href="https://www.google.com/maps/dir/?api=1&amp;destination=36.7150,3.0520&amp;travelmode=driving" target="_blank" rel="noopener">Itinéraire vers le siège (Google Maps)</a>
+        </p>
+        <p class="carte-note">Adresse : Lotissement Mont Froid, Zonka, Birkhadem, Alger. Position du siège indicative. Fonds de carte © contributeurs d’OpenStreetMap. Votre position n’est jamais transmise à GCF Spa (voir <a href="donnees-personnelles.html#carte-donnees">Protection des données personnelles</a>).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="conteneur">
+      <h2 class="reveal">Contact</h2>
+      <p class="intro reveal">Pour une demande d'information, de partenariat ou de devis, écrivez-nous ou appelez-nous.</p>
+      <div class="coordonnees">
+        <div class="reveal">
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Siège</h3>
+          <!-- Adresse à vérifier : annuaires professionnels indiquant Birkhadem -->
+          <p>Lotissement Mont Froid, Zonka<br>Birkhadem, Alger</p>
+        </div>
+        <div class="reveal">
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>E-mail</h3>
+          <p><a href="mailto:contact@gcfspa.dz">contact@gcfspa.dz</a></p>
+        </div>
+        <div class="reveal">
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Téléphone</h3>
+          <p><a href="tel:+213000000000">+213 (0) 00 00 00 00 00</a></p>
+        </div>
+        <div class="reveal">
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg>YouTube</h3>
+          <p><a href="https://youtube.com/@gcfspaalgerie" target="_blank" rel="noopener">GCF Spa Algérie</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="conteneur">
+    <p>© 2026 GCF Spa, Groupe public de construction ferroviaire. Tous droits réservés.</p>
+    <p class="pied-liens"><a href="signalement.html">Signalement et prévention de la corruption</a> · <a href="donnees-personnelles.html">Protection des données personnelles</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
