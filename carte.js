@@ -1,5 +1,5 @@
 /* GCF Spa : carte interactive du siège.
-   Leaflet est hébergé sur le site (vendor/leaflet). Aucune requête vers un service externe
+   Leaflet est hébergé sur le site (lib/leaflet). Aucune requête vers un service externe
    n'est faite tant que le visiteur n'a pas cliqué sur « Afficher la carte », et la position
    du visiteur n'est demandée qu'après un clic sur « Me localiser ». Elle reste dans le navigateur. */
 (function () {
@@ -170,7 +170,7 @@
   bAfficher.addEventListener('click', function () {
     bAfficher.disabled = true;
     dire('Chargement de la carte…');
-    charger('vendor/leaflet/leaflet.js', creerCarte, function () {
+    charger('lib/leaflet/leaflet.js', creerCarte, function () {
       bAfficher.disabled = false;
       dire('La carte n’a pas pu être chargée. Utilisez les liens d’itinéraire ci-dessous.');
     });

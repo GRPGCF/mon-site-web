@@ -36,13 +36,20 @@ Sans ces trois enregistrements DNS, n'importe qui peut envoyer un faux message �
 
 ## 5. Carte d'accès (page d'accueil)
 
-- La carte utilise **Leaflet 1.9.4**, hébergé dans `vendor/leaflet/` : ne pas supprimer ce dossier, il fait partie du site.
+- La carte utilise **Leaflet 1.9.4**, hébergé dans `lib/leaflet/` : ne pas supprimer ce dossier, il fait partie du site.
 - Aucune requête externe n'est envoyée avant le clic du visiteur sur « Afficher la carte ». Ensuite, les fonds de carte viennent de `tile.openstreetmap.org` : c'est la seule exception de la politique de sécurité de contenu (CSP), limitée à l'affichage des images.
 - La géolocalisation du visiteur est autorisée par la politique `Permissions-Policy: geolocation=(self)` et reste dans son navigateur.
-- **À confirmer** : la position du siège (`data-lat` / `data-lon` dans `index.html`) est indicative (centre de Birkhadem). Les positions des filiales (dans `carte.js`) sont au centre de leur commune. Les remplacer par les coordonnées exactes (clic droit sur le lieu dans OpenStreetMap ou Google Maps).
+- La position du siège (`data-lat` / `data-lon` dans `index.html`) a été fixée sur les coordonnées exactes fournies : 36°42'36.7"N 3°03'46.6"E. Les positions des filiales (dans `carte.js`) sont au centre de leur commune : les remplacer par des coordonnées exactes si elles sont connues.
 - Les conditions d'usage d'OpenStreetMap conviennent à un site à trafic modéré. Si la fréquentation devient importante, prévoir un fournisseur de tuiles dédié.
 
-## 6. Entretien courant
+## 6. Publication sur GitHub Pages
+
+- Déposer **tout** le contenu du dossier `site/`, y compris `lib/leaflet/` (la carte en dépend), `.nojekyll` et `.well-known/`. Si la carte affiche « La carte n'a pas pu être chargée », vérifier que `lib/leaflet/leaflet.js` s'ouvre dans le navigateur (adresse du site + `/lib/leaflet/leaflet.js`) : s'il donne une erreur 404, le dossier n'a pas été envoyé (souvent à cause d'un fichier `.gitignore`).
+- `.nojekyll` est nécessaire pour que les fichiers commençant par un point (comme `.well-known/security.txt`) soient publiés.
+- GitHub Pages **ignore le fichier `.htaccess`** : les en-têtes de sécurité du serveur ne s'appliquent pas. La politique de sécurité de contenu inscrite dans chaque page (balise `meta`) reste active. Activer « Enforce HTTPS » dans les réglages de Pages.
+- Le fichier `.htaccess` et `nginx-gcfspa.conf` ne servent que si le site est hébergé sur un serveur classique (par exemple chez Algérie Télécom).
+
+## 7. Entretien courant
 
 - `/.well-known/security.txt` expire le **18 octobre 2027** : renouveler la date chaque année.
 - Revoir chaque année la liste des comptes ayant accès à l'hébergement et à la messagerie.
