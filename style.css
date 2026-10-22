@@ -20,7 +20,7 @@
   .conteneur { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
   h1, h2, h3 { font-family: var(--titres); line-height: 1.15; }
 
-  header { background: var(--nuit); position: sticky; top: 0; z-index: 10; }
+  header { background: var(--nuit); position: sticky; top: 0; z-index: 2000; }
   header .conteneur { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 2rem; padding-top: .9rem; padding-bottom: .9rem; }
   .logo { font-family: var(--titres); font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
   .logo { display: block; line-height: 0; }
@@ -241,7 +241,7 @@
 .carte-actions .bouton:disabled { opacity: .6; cursor: progress; }
 .bouton.contour { background: #fff; color: var(--encre); border-color: var(--acier); }
 .bouton.contour:hover { background: var(--encre); color: #fff; }
-.carte-zone { position: relative; height: clamp(300px, 56vw, 460px); border-radius: 12px; overflow: hidden; border: 1px solid var(--trait); background: #fff; display: grid; place-items: center; }
+.carte-zone { position: relative; isolation: isolate; z-index: 0; height: clamp(300px, 56vw, 460px); border-radius: 12px; overflow: hidden; border: 1px solid var(--trait); background: #fff; display: grid; place-items: center; }
 .carte-zone.leaflet-container { display: block; font: inherit; }
 .carte-attente { margin: 0; padding: 1rem 1.5rem; max-width: 46ch; text-align: center; color: var(--gris); }
 .carte-statut { min-height: 1.6em; margin: .9rem 0 .25rem; font-weight: 600; color: var(--encre); max-width: 70ch; }
