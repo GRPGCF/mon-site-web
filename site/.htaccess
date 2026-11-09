@@ -1,0 +1,33 @@
+# GCF Spa : sécurité du site (Apache / LiteSpeed)
+# À déposer à la racine du site. Ne fonctionne que si l'hébergeur autorise les fichiers .htaccess.
+# Si le serveur est Nginx, utiliser plutôt securite/nginx-gcfspa.conf.
+
+Options -Indexes
+ServerSignature Off
+AddDefaultCharset UTF-8
+
+# 1. Forcer HTTPS (à activer une fois le certificat installé)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 2. Interdire l'accès aux fichiers cachés, sauf /.well-known/ (security.txt)
+<IfModule mod_alias.c>
+  RedirectMatch 404 "/\.(?!well-known/)"
+</IfModule>
+
+# 3. En-têtes de sécurité
+<IfModule mod_headers.c>
+  # HSTS : commencer par 5 minutes, puis passer à 31536000 (1 an) une fois tout vérifié
+  Header always set Strict-Transport-Security "max-age=300"
+
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: https://tile.openstreetmap.org; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>
